@@ -1,24 +1,16 @@
-import  { useState } from 'react';
-import { Cloudinary } from '@cloudinary/url-gen';
-import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
+import {useState} from 'react';
+import PhotoAlbumComponent from './components/PhotoAlbum';
+import EffectSelection from './components/EffectSelection';
 
-import CloudinaryUploadWidget from './components/CloudinaryUploadWidget';
 import './App.css';
 
 const App = () => {
   // Configuration
-  const cloudName = 'hzxyensd5';
-  const uploadPreset = 'aoh4fpwm';
+  const cloudName = 'YOUR_CLOUD_NAME';
+  const uploadPreset = 'YOUR_PRESET_NAME';
 
   // State
-  const [publicId, setPublicId] = useState('');
-
-  // Cloudinary configuration
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName,
-    },
-  });
+  const [effectOption, setEffectOption] = useState('Background Fill');
 
   // Upload Widget Configuration
   const uwConfig = {
@@ -37,46 +29,17 @@ const App = () => {
     // maxImageWidth: 2000,
     // theme: 'purple',
   };
+  let photos = [];
+  let width = 1280;
+  let height = 1257;
 
   return (
     <div className="App">
-      <h3>Cloudinary Upload Widget Example</h3>
-
-      <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
-
-      <div className="documentation-links">
-        <p>
-          <a
-            href="https://cloudinary.com/documentation/upload_widget"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Upload Widget User Guide
-          </a>
-        </p>
-        <p>
-          <a
-            href="https://cloudinary.com/documentation/upload_widget_reference"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Upload Widget Reference
-          </a>
-        </p>
-      </div>
-
-      {publicId && (
-        <div
-          className="image-preview"
-          style={{ width: '800px', margin: '20px auto' }}
-        >
-          <AdvancedImage
-            style={{ maxWidth: '100%' }}
-            cldImg={cld.image(publicId)}
-            plugins={[responsive(), placeholder()]}
-          />
-        </div>
-      )}
+      <h3>Cloudinary GenAI Image Capabilities</h3>
+          <div className="spacing"></div>
+          <EffectSelection effectOption={effectOption} onEffectOptionChange={setEffectOption}/>
+          <div className="spacing"></div>
+          <PhotoAlbumComponent data={{effectOption: effectOption, onEffectOptionChange:{setEffectOption}}}/>
     </div>
   );
 };
