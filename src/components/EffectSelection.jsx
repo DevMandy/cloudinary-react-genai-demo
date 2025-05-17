@@ -32,8 +32,6 @@ export default function EffectSelection({effectOption, onEffectOptionChange}) {
               <FormControlLabel value="Generative Recolor" control={<Radio />} label="Generative Recolor" />
               <FormControlLabel value="Generative Recolor Multiple" control={<Radio />} label="Generative Recolor Multiple" />
               <FormControlLabel value="Background Remove" control={<Radio />} label="Background Remove" />
-              {/*<FormControlLabel value="Background Replace" control={<Radio />} label="Background Replace" />*/}
-
               <FormControlLabel value="Generative Restore" control={<Radio />} label="Generative Restore" />
           </RadioGroup>
         </FormControl>

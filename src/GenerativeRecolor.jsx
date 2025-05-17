@@ -9,7 +9,7 @@ export function getGenerativeRecolorUrl(publicId, prompt, toColor, multiple) {
         console.log("mutliple detected")
         myImage
             .effect(
-                generativeRecolor("device", "#EA672A").detectMultiple()
+                generativeRecolor(prompt, toColor).detectMultiple()
             );
     }
     else {

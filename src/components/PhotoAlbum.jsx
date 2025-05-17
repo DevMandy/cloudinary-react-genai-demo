@@ -18,8 +18,6 @@ const PhotoAlbumComponent = (props) => {
     let width = 1920;
     let height = 1280;
 
-    console.log("effectOption = " + props.data.effectOption)
-
     if(props.data.effectOption == "Background Replace"){
         publicId = 'docs/woman-sitting';
             photos.push({src: getOriginalUrl(publicId, width, height), width: width, height: height });
@@ -105,10 +103,8 @@ const PhotoAlbumComponent = (props) => {
     return (
       <div className="App-body">
         <PhotoAlbum layout="rows"
-                        photos={photos}
-                        // targetRowHeight={150}
-                        justifyContent={'center'}
-                        // rowConstraints={{ singleRowMaxHeight: 250 }}
+            photos={photos}
+            justifyContent={"center"}
         />
       </div>
     );

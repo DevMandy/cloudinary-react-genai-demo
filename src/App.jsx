@@ -6,11 +6,11 @@ import './App.css';
 
 const App = () => {
   // Configuration
-  const cloudName = 'YOUR_CLOUD_NAME';
-  const uploadPreset = 'YOUR_PRESET_NAME';
+  const cloudName = 'devmandy';
+  const uploadPreset = 'mandy-test';
 
   // State
-  const [effectOption, setEffectOption] = useState('Background Fill');
+  const [effectOption, setEffectOption] = useState('Generative Recolor');
 
   // Upload Widget Configuration
   const uwConfig = {
