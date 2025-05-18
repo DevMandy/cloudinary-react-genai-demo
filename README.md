@@ -1,7 +1,10 @@
 # Cloudinary Generative AI Demo Application
 
-This app uses the React SDK to showcase Cloudinary's generative AI image transformation capabilities. 
-It implements many of the examples from [the documentation](https://cloudinary.com/documentation/generative_ai_transformations).
+This app uses the React SDK to showcase Cloudinary's generative AI image transformation capabilities. It was forked from 
+[cloudinary-upload-widget-react](https://github.com/cloudinary-devs/cloudinary-upload-widget-react) and renamed to reflect
+its functionality. 
+
+This app implements many of the examples from [the Cloudinary genai documentation](https://cloudinary.com/documentation/generative_ai_transformations).
 
 It uses images in the `demo` account, so you can run this app locally with no additionally setup. 
 
